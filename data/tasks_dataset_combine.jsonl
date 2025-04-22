@@ -1,0 +1,46 @@
+{"web_name": "NCU", "id": "NCU--E1", "ques": "Identify the courses available in the Department of Electrical Engineering.", "web": "https://www.ncu.edu.tw/tw/"}
+{"web_name": "NCU", "id": "NCU--E2", "ques": "Locate and summarize the recent news related to university awards and achievements.", "web": "https://www.ncu.edu.tw/tw/"}
+{"web_name": "NCU", "id": "NCU--E3", "ques": "Find the page that lists available research scholarships for international students and summarize the options.", "web": "https://www.ncu.edu.tw/tw/"}
+{"web_name": "NCU", "id": "NCU--E4", "ques": "Find the contact information for the Office of International Affairs and list the available communication methods.", "web": "https://www.ncu.edu.tw/tw/"}
+{"web_name": "NCU", "id": "NCU--E5", "ques": "Look up the current rankings of NCU in international university rankings, if available.", "web": "https://www.ncu.edu.tw/tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--E1", "ques": "Search for the latest offers on home appliances, specifically refrigerators, and list the top three deals.", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--E2", "ques": "Find the price of a Samsung Galaxy Tab S9 with at least 256GB storage and report the best price available.", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--E3", "ques": "Find the available models and prices for Bluetooth headphones from Sony and provide a summary.", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--E4", "ques": "Find if there are any promotional bundles for buying coffee makers and coffee beans together.", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--E5", "ques": "Identify any discounts or promotions on smartwatches from Garmin and list the best offers.", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Threads", "id": "Threads--E1", "ques": "Search for the latest updates on space exploration and provide a summary of the top 5 posts you find.", "web": "https://threads.net"}
+{"web_name": "Threads", "id": "Threads--E2", "ques": "Look up posts on Threads mentioning \"AI advancements\" and give a brief description of three posts with the highest engagement.", "web": "https://threads.net"}
+{"web_name": "Threads", "id": "Threads--E3", "ques": "Find posts related to \"new music releases\" from this week and list three popular artists mentioned.", "web": "https://threads.net"}
+{"web_name": "Threads", "id": "Threads--E4", "ques": "Find three recent posts about book recommendations and list the book titles and authors mentioned.", "web": "https://threads.net"}
+{"web_name": "Threads", "id": "Threads--E5", "ques": "Find posts about career advice and list three unique tips shared in highly-engaged posts.", "web": "https://threads.net"}
+{"web_name": "GoogleNews", "id": "GoogleNews--E1", "ques": "Find the latest news on advancements in renewable energy, especially focusing on solar and wind power. Summarize any recent developments discussed.", "web": "https://news.google.com/"}
+{"web_name": "GoogleNews", "id": "GoogleNews--E2", "ques": "Find news on recent technological innovations in artificial intelligence and highlight any new breakthroughs announced this week.", "web": "https://news.google.com/"}
+{"web_name": "GoogleNews", "id": "GoogleNews--E3", "ques": "Check if there are any travel advisories or alerts for international flights to Europe. Summarize the reasons for the advisory and the countries affected.", "web": "https://news.google.com/"}
+{"web_name": "GoogleNews", "id": "GoogleNews--E4", "ques": "Search for the latest updates in cybersecurity. Identify if there have been any significant data breaches reported within the past week and which sectors were impacted.", "web": "https://news.google.com/"}
+{"web_name": "GoogleNews", "id": "GoogleNews--E5", "ques": "Search for updates on Taiwan’s tech industry, especially in semiconductor manufacturing. Summarize any recent advancements or partnerships formed within the last week.", "web": "https://news.google.com/"}
+{"web_name": "PTTNews", "id": "PTTNews--E1", "ques": "Identify discussions in the Technology section focusing on new tech product releases and list user opinions for and against the latest products mentioned.", "web": "https://www.pttweb.cc/newest/all"}
+{"web_name": "PTTNews", "id": "PTTNews--E2", "ques": "Check the trending topics in the Finance section, focusing on user sentiments around Taiwan’s stock market performance. Summarize both optimistic and pessimistic viewpoints.", "web": "https://www.pttweb.cc/newest/all"}
+{"web_name": "PTTNews", "id": "PTTNews--E3", "ques": "In the Entertainment section, find the most discussed movie release this week and categorize user comments into those that are positive and negative.", "web": "https://www.pttweb.cc/newest/all"}
+{"web_name": "PTTNews", "id": "PTTNews--E4", "ques": "Identify discussions around popular restaurants in the Food section and count the number of comments recommending and advising against each one.", "web": "https://www.pttweb.cc/newest/all"}
+{"web_name": "PTTNews", "id": "PTTNews--E5", "ques": "In the Travel section, identify current recommendations for weekend getaways and summarize both positive and negative feedback on each destination.", "web": "https://www.pttweb.cc/newest/all"}
+{"web_name": "NCU", "id": "NCU--1", "ques": "Help me find the webpage of '前瞻科技研究中心'", "web": "https://www.ncu.edu.tw/tw/"}
+{"web_name": "NCU", "id": "NCU--2", "ques": "Please tell me who the current principal is", "web": "https://www.ncu.edu.tw/tw/"}
+{"web_name": "NCU", "id": "NCU--3", "ques": "open '網站導覽' page, and list relevant web pages.", "web": "https://www.ncu.edu.tw/tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--1", "ques": "Find all the offers on credit cards", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--2", "ques": "Find nvidia RTX4090 price I want graphics card not computer", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--3", "ques": "I'm looking for an iPhone 16 pro that supports esim and provides original warranty. Tell me the price.", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--4", "ques": "Please find airpods 4 products that offer 24h delivery", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Threads", "id": "Threads--1", "ques": "Get the top-5 news", "web": "https://threads.net"}
+{"web_name": "Threads", "id": "Threads--2", "ques": "search donald trump, and give me top-3 search", "web": "https://threads.net"}
+{"web_name": "Threads", "id": "Threads--3", "ques": "search 演唱會, look at the top five news and tell me which artists you saw in concert", "web": "https://threads.net"}
+{"web_name": "GoogleNews", "id": "GoogleNews--1", "ques": "Find news about Taiwan and tell me when the typhoon will affect northern Taiwan and what its intensity is.", "web": "https://news.google.com/"}
+{"web_name": "GoogleNews", "id": "GoogleNews--2", "ques": "Find news about 遊戲", "web": "https://news.google.com/"}
+{"web_name": "GoogleNews", "id": "GoogleNews--3", "ques": "Please tell me the biggest news in Taiwan today", "web": "https://news.google.com/"}
+{"web_name": "PTTNews", "id": "PTTNews--1", "ques": "Please read the article, analyze the position of the comments at the bottom of the page (not 討論串), please distinguish between support and opposition, and count the number of people", "web": "https://www.pttweb.cc/bbs/Gossiping/M.1731382037.A.8DE"}
+{"web_name": "PTTNews", "id": "PTTNews--2", "ques": "Please read this article and point out the pros and cons in the comments below.", "web": "https://www.pttweb.cc/bbs/Gossiping/M.1731380291.A.ADE"}
+{"web_name": "PTTNews", "id": "PTTNews--3", "ques": "What is being discussed in the sports section of popular articles?", "web": "https://www.pttweb.cc/newest/all"}
+{"web_name": "Youtube", "id": "Youtube--1", "ques": "Please analyze the position of the comments below the video, and list the number of supporting and opposing comments and a brief description.", "web": "https://www.youtube.com/watch?v=8HLEqTqX4J8"}
+{"web_name": "Youtube", "id": "Youtube--2", "ques": "Please give me an introduction to this video.", "web": "https://www.youtube.com/watch?v=7FXW7UYDaUM"}
+{"web_name": "Youtube", "id": "Youtube--3", "ques": "Based on the title of this video, find videos with similar topics among the recommended videos.", "web": "https://www.youtube.com/watch?v=VPWVNcnerWE"}
+{"web_name": "Youtube", "id": "Youtube--4", "ques": "Please help me organize the comments under the video. You only need to consider the comments within this week.", "web": "https://www.youtube.com/watch?v=u8eno8nk4Ik"}
+{"web_name": "Youtube", "id": "Youtube--5", "ques": "Please find the most popular comments under the video.", "web": "https://www.youtube.com/watch?v=8HLEqTqX4J8"}

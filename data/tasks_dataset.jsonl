@@ -1,0 +1,20 @@
+{"web_name": "NCU", "id": "NCU--1", "ques": "Help me find the webpage of '前瞻科技研究中心'", "web": "https://www.ncu.edu.tw/tw/"}
+{"web_name": "NCU", "id": "NCU--2", "ques": "Please tell me who the current principal is", "web": "https://www.ncu.edu.tw/tw/"}
+{"web_name": "NCU", "id": "NCU--3", "ques": "open '網站導覽' page, and list relevant web pages.", "web": "https://www.ncu.edu.tw/tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--1", "ques": "Find all the offers on credit cards", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--2", "ques": "Find nvidia RTX4090 price I want graphics card not computer", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--3", "ques": "I'm looking for an iPhone 16 pro that supports esim and provides original warranty. Tell me the price.", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Pchome24h", "id": "Pchome24h--4", "ques": "Please find airpods 4 products that offer 24h delivery", "web": "https://24h.pchome.com.tw/"}
+{"web_name": "Threads", "id": "Threads--1", "ques": "Get the top-5 news", "web": "https://threads.net"}
+{"web_name": "Threads", "id": "Threads--2", "ques": "search donald trump, and give me top-3 search", "web": "https://threads.net"}
+{"web_name": "Threads", "id": "Threads--3", "ques": "search 演唱會, look at the top five news and tell me which artists you saw in concert", "web": "https://threads.net"}
+{"web_name": "GoogleNews", "id": "GoogleNews--1", "ques": "Find news about Taiwan and tell me when the typhoon will affect northern Taiwan and what its intensity is.", "web": "https://news.google.com/"}
+{"web_name": "GoogleNews", "id": "GoogleNews--2", "ques": "Find news about 遊戲", "web": "https://news.google.com/"}
+{"web_name": "GoogleNews", "id": "GoogleNews--3", "ques": "Please tell me the biggest news in Taiwan today", "web": "https://news.google.com/"}
+{"web_name": "PTTNews", "id": "PTTNews--1", "ques": "Please read the article, analyze the position of the comments at the bottom of the page (not 討論串), please distinguish between support and opposition, and count the number of people", "web": "https://www.pttweb.cc/bbs/Gossiping/M.1731382037.A.8DE"}
+{"web_name": "PTTNews", "id": "PTTNews--2", "ques": "Please read this article and point out the pros and cons in the comments below.", "web": "https://www.pttweb.cc/bbs/Gossiping/M.1731380291.A.ADE"}
+{"web_name": "PTTNews", "id": "PTTNews--3", "ques": "What is being discussed in the sports section of popular articles?", "web": "https://www.pttweb.cc/newest/all"}
+{"web_name": "Youtube", "id": "Youtube--1", "ques": "Please analyze the position of the comments below the video, and list the number of supporting and opposing comments and a brief description.", "web": "https://www.youtube.com/watch?v=LWDx0HorbzM"}
+{"web_name": "Youtube", "id": "Youtube--2", "ques": "Please give me an introduction to this video.", "web": "https://www.youtube.com/watch?v=7FXW7UYDaUM"}
+{"web_name": "Youtube", "id": "Youtube--3", "ques": "Based on the title of this video, find videos with similar topics among the recommended videos.", "web": "https://www.youtube.com/watch?v=VPWVNcnerWE"}
+{"web_name": "Youtube", "id": "Youtube--4", "ques": "Please help me organize the comments under the video. You only need to consider the comments within this week.", "web": "https://www.youtube.com/watch?v=u8eno8nk4Ik"}

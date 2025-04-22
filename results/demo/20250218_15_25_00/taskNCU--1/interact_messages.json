@@ -1,0 +1,127 @@
+[
+  {
+    "role": "system",
+    "content": "Imagine you are a robot browsing the web, just like humans. Now you need to complete a task. In each iteration, you will receive an Observation that includes a screenshot of a webpage and some texts. This screenshot will feature Numerical Labels placed in the TOP LEFT corner of each Web Element.\nCarefully analyze the visual information to identify the Numerical Label corresponding to the Web Element that requires interaction, then follow the guidelines and choose one of the following actions:\n1. Click a Web Element.\n2. Delete existing content in a textbox and then type content. \n3. Scroll up or down. Multiple scrolls are allowed to browse the webpage. Pay attention!! The default scroll is the whole window. If the scroll widget is located in a certain area of the webpage, then you have to specify a Web Element in that area. I would hover the mouse there and then scroll.\n4. Wait. Typically used to wait for unfinished webpage processes, with a duration of 5 seconds.\n5. Go back, returning to the previous webpage.\n6. Google, directly jump to the Google search page. When you can't find information in some websites, try starting over with Google.\n7. Answer. This action should only be chosen when all questions in the task have been solved.\n\nCorrespondingly, Action should STRICTLY follow the format:\n- Click [Numerical_Label]\n- Type [Numerical_Label]; [Content]\n- Scroll [Numerical_Label or WINDOW]; [up or down]\n- Wait\n- GoBack\n- Google\n- ANSWER; [content]\n\nKey Guidelines You MUST follow:\n* Action guidelines *\n1) To input text, NO need to click textbox first, directly type content. After typing, the system automatically hits `ENTER` key. Sometimes you should click the search button to apply search filters. Try to use simple language when searching.  \n2) You must Distinguish between textbox and search button, don't type content into the button! If no textbox is found, you may need to click the search button first before the textbox is displayed. \n3) Execute only one action per iteration. \n4) STRICTLY Avoid repeating the same action if the webpage remains unchanged. You may have selected the wrong web element or numerical label. Continuous use of the Wait is also NOT allowed.\n5) When a complex Task involves multiple questions or steps, select \"ANSWER\" only at the very end, after addressing all of these questions (steps). Flexibly combine your own abilities with the information in the web page. Double check the formatting requirements in the task when ANSWER. \n* Web Browsing Guidelines *\n1) Don't interact with useless web elements like Login, Sign-in, donation that appear in Webpages. Pay attention to Key Web Elements like search textbox and menu.\n2) If there are forced logins or ads, you can click to close them.\n3) Vsit video websites like YouTube is allowed BUT you can't play videos. Clicking to download PDF is allowed and will be analyzed by the Assistant API.\n4) Focus on the numerical labels in the TOP LEFT corner of each rectangle (element). Ensure you don't mix them up with other numbers (e.g. Calendar) on the page.\n5) Focus on the date in task, you must look for results that match the date. It may be necessary to find the correct year, month and day at calendar.\n6) Pay attention to the filter and sort functions on the page, which, combined with scroll, can help you solve conditions like 'highest', 'cheapest', 'lowest', 'earliest', etc. Try your best to find the answer that best fits the task.\n\nYour reply should strictly follow the format:\nThought: {Your brief thoughts (briefly summarize the info that will help ANSWER)}\nAction: {One Action format you choose}\n\nThen the User will provide:\nObservation: {A labeled screenshot Given by User}"
+  },
+  {
+    "role": "user",
+    "content": "Now given a task: Help me find the webpage of '\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3'  Please interact with https://www.ncu.edu.tw/tw/ and get the answer.Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The cookie consent pop-up (label 4) is likely interfering with interactions on the webpage. Accepting it would allow further exploration of the site.\n\nAction: Click [4]"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The visible section of the webpage does not display a search bar or direct link to \"\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\". Using the search function is suggested, but it is not yet visible. The webpage may need to be scrolled further to find relevant navigation or search options.\n\nAction: Scroll [WINDOW]; down"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The search functionality or a direct reference to \"\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\" is still not visible within the current portion of the webpage. Scrolling further may reveal the search bar or a relevant section for exploration.\n\nAction: Scroll [WINDOW]; down"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The search function or a link to \"\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\" has not been located in the visible sections so far. Scrolling further may still help uncover navigation tools or relevant content.\n\nAction: Scroll [WINDOW]; down"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The current view is entirely blank, suggesting that the necessary elements or references to \"\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\" have not been found on this webpage. As suggested, switching to a search engine to locate the required official webpage might be the most efficient approach.\n\nAction: Google"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The Google search bar (label 7) is available and ready to use to search for \"\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\" as suggested earlier. This is the most direct approach to locate the desired webpage or related information.\n\nAction: Type [7]; \u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The first link (label 19) is a direct result leading to \"\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\" on the National Central University website. This link is most relevant for the task and should be clicked to proceed.\n\nAction: Click [19]  "
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The URL (label 16) is clearly displayed and provides direct access to the \"\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\" website. Clicking it will lead to the relevant webpage.\n\nAction: Click [16]"
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "Observation: web assistant:\u8cc7\u8a0a\u4e0d\u8db3\u3002\u5efa\u8b70\u60a8\u8a2a\u554f\u4e2d\u592e\u5927\u5b78\u7684\u7db2\u7ad9\u9996\u9801\u6216\u4f7f\u7528\u641c\u5c0b\u5f15\u64ce\u641c\u5c0b\u300c\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\u300d\uff0c\u4ee5\u627e\u5230\u76f8\u95dc\u7684\u7db2\u9801\u8cc7\u8a0a\u3002 please analyze the attached screenshot (Currently visible range\uff1aNaN% - Infinity%) and give the Thought and Action. I've provided the tag name of each element and the text it contains (if text exists). Note that <textarea> or <input> may be textbox, but not exactly. Please focus more on the screenshot and then refer to the textual information.\n[0]: \"\u9032\u4e00\u6b65\u77ad\u89e3\u9019\u9805\u8b66\u544a\";\t[1]: \"\u958b\u555f\u5f37\u5316\u9632\u8b77\";\t[2]: <button> \"\u8fd4\u56de\u5b89\u5168\u7db2\u9801\";\t[3]: <button> \"\u9032\u968e\";"
+      },
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "data:image/png;base64,{b64_img}"
+        }
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The warning indicates a certificate authority issue with the website. To proceed to the requested webpage despite the warning, the \"\u9032\u968e\" (Advanced) button (label 3) can be clicked.\n\nAction: Click [3]"
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "Observation: web assistant:\u6839\u64da\u63d0\u4f9b\u7684\u5167\u5bb9\uff0c\u7db2\u7ad9 **www.recast.ncu.edu.tw** \u986f\u793a\u4e86\u5b89\u5168\u6027\u8b66\u544a\uff0c\u8868\u793a\u5b83\u7684\u9023\u7dda\u4e0d\u662f\u79c1\u4eba\u9023\u7dda\uff0c\u4e14\u53ef\u80fd\u5b58\u5728\u5b89\u5168\u98a8\u96aa\u3002\u9019\u8868\u660e\u8a72\u7db2\u7ad9\u7684\u5b89\u5168\u6191\u8b49\u5b58\u5728\u554f\u984c\uff0c\u56e0\u6b64\u7121\u6cd5\u4fe1\u4efb\u3002\n\n\u82e5\u8981\u627e\u5230\u300c\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\u300d\u7684\u7db2\u9801\uff0c\u5efa\u8b70\u60a8\u4f7f\u7528\u4ee5\u4e0b\u65b9\u6cd5\uff1a\n\n1. \u5617\u8a66\u641c\u7d22\u300c\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\u300d\u7684\u76f8\u95dc\u95dc\u9375\u5b57\uff0c\u7d50\u5408\u300c\u570b\u7acb\u4e2d\u592e\u5927\u5b78\u300d\u6216\u300c\u524d\u77bb\u79d1\u6280\u7814\u7a76\u300d\u7b49\u8a5e\u5f59\uff0c\u901a\u904e\u641c\u5c0b\u5f15\u64ce\u5c0b\u627e\u5b98\u65b9\u7db2\u7ad9\u3002\n2. \u76f4\u63a5\u8a2a\u554f\u570b\u7acb\u4e2d\u592e\u5927\u5b78\u7684\u5b98\u65b9\u7db2\u7ad9\uff0c\u5c0b\u627e\u53ef\u80fd\u7684\u9023\u7d50\u6216\u8005\u90e8\u9580\u9801\u9762\u3002\n3. \u82e5\u6709\u5176\u4ed6\u53ef\u9760\u4f86\u6e90\u6216\u6587\u4ef6\u63d0\u5230\u8a72\u4e2d\u5fc3\uff0c\u4e5f\u53ef\u4ee5\u53c3\u8003\u90a3\u4e9b\u8cc7\u8a0a\u3002\n\n\u5982\u679c\u4ecd\u7136\u7121\u6cd5\u627e\u5230\u6240\u9700\u7684\u7db2\u9801\uff0c\u5efa\u8b70\u5728\u5b89\u5168\u7684\u74b0\u5883\u4e0b\uff08\u5982\u4f7f\u7528 VPN \u6216\u5176\u4ed6\u5b89\u5168\u9023\u7dda\u65b9\u5f0f\uff09\u5617\u8a66\u8a2a\u554f\u8a72\u7db2\u7ad9\uff0c\u6216\u8010\u5fc3\u7b49\u5f85\u8a72\u7db2\u7ad9\u89e3\u6c7a\u5176\u5b89\u5168\u6027\u554f\u984c\u3002 please analyze the attached screenshot (Currently visible range\uff1a0.00% - 1074.14%) and give the Thought and Action. I've provided the tag name of each element and the text it contains (if text exists). Note that <textarea> or <input> may be textbox, but not exactly. Please focus more on the screenshot and then refer to the textual information.\n[0]: \"\u9032\u4e00\u6b65\u77ad\u89e3\u9019\u9805\u8b66\u544a\";\t[1]: \"\u958b\u555f\u5f37\u5316\u9632\u8b77\";\t[2]: <button> \"\u8fd4\u56de\u5b89\u5168\u7db2\u9801\";\t[3]: <button> \"\u96b1\u85cf\u8a73\u7d30\u8cc7\u6599\";\t[4]: \"\u7e7c\u7e8c\u524d\u5f80 www.recast.ncu.edu.tw \u7db2\u7ad9 (\u4e0d\u5b89\u5168)\";"
+      },
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "data:image/png;base64,{b64_img}"
+        }
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The option to \"\u7e7c\u7e8c\u524d\u5f80 www.recast.ncu.edu.tw \u7db2\u7ad9 (\u4e0d\u5b89\u5168)\" (label 4) is present. Proceeding with this action would allow access to the webpage, albeit with potential security risks.\n\nAction: Click [4]"
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "Observation: web assistant:\u6839\u64da\u60a8\u63d0\u4f9b\u7684\u5167\u5bb9\uff0c\u60a8\u53ef\u4ee5\u900f\u904e\u4ee5\u4e0b\u7684\u806f\u7d61\u8cc7\u8a0a\u4f86\u5c0b\u627e\u300c\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\u300d\u7684\u7db2\u9801\uff1a\n\n- \u96fb\u5b50\u90f5\u4ef6\uff1ancu57971@ncu.edu.tw\n- \u96fb\u8a71\uff1a03-4227151\n- \u5730\u5740\uff1a\u6843\u5712\u5e02\u4e2d\u58e2\u5340\u4e2d\u5927\u8def300\u865f(\u5de5\u7a0b\u4e94\u9928C\u68df)\n\n\u5982\u679c\u9700\u8981\u9032\u4e00\u6b65\u7684\u4fe1\u606f\uff0c\u5efa\u8b70\u60a8\u76f4\u63a5\u806f\u7d61\u8a72\u4e2d\u5fc3\u6216\u641c\u5c0b\u7db2\u8def\u4e0a\u7684\u76f8\u95dc\u4fe1\u606f\u3002 please analyze the attached screenshot (Currently visible range\uff1a0.00% - 12.92%) and give the Thought and Action. I've provided the tag name of each element and the text it contains (if text exists). Note that <textarea> or <input> may be textbox, but not exactly. Please focus more on the screenshot and then refer to the textual information.\n[0]: \":::\";\t[1]: \"\u7db2\u7ad9\u5c0e\u89bd\";\t[2]: \"ncu57971@ncu.edu.tw\", \"Send email to ncu57971@ncu.edu.tw\";\t[3]: \"03-4227151\", \"Call 03-4227151\";\t[4]: \"\u524d\u77bb\u79d1\u6280\u4e2d\u5fc3\";\t[5]: \"\u9996\u9801\";\t[6]: \"\u95dc\u65bc\";\t[7]: \"\u4e2d\u5fc3\u6cd5\u898f\";\t[8]: \"\u4e2d\u5fc3\u7d44\u7e54\";\t[9]: \"\u4e2d\u5fc3\u4e3b\u4efb\";\t[10]: \"\u51fa\u7248\u520a\u7269\";\t[11]: \"\u806f\u7d61\u6211\u5011\";\t[12]: \"English\";\t[13]: \"101\u5e742\u67081\u65e5\u6b63\u5f0f\u6210\u7acb\u300c\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\u300dResearch Center for Advanced Science and Technology\uff08RECAST)\";"
+      },
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "data:image/png;base64,{b64_img}"
+        }
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The webpage for \"\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\" (Research Center for Advanced Science and Technology, RECAST) is visible. Its title and content confirm that this is the required webpage. \n\nAction: ANSWER; The webpage of \"\u524d\u77bb\u79d1\u6280\u7814\u7a76\u4e2d\u5fc3\" (Research Center for Advanced Science and Technology) is successfully located at the visible address with title confirming its identity."
+  }
+]

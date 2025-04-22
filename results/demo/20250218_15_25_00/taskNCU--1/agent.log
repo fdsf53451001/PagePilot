@@ -1,0 +1,116 @@
+INFO - ########## TASKNCU--1 ##########
+INFO - Iter: 0
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Calling gpt4v API...
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Prompt Tokens: 1885; Completion Tokens: 38
+INFO - Accumulate Prompt Tokens: 1885; Accumulate Completion Tokens: 38
+INFO - API call complete...
+INFO - Num of interactive elements: 6
+INFO - Iter: 1
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Calling gpt4v API...
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Prompt Tokens: 3057; Completion Tokens: 64
+INFO - Accumulate Prompt Tokens: 4942; Accumulate Completion Tokens: 102
+INFO - API call complete...
+INFO - Num of interactive elements: 7
+INFO - Iter: 2
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Calling gpt4v API...
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Prompt Tokens: 4317; Completion Tokens: 52
+INFO - Accumulate Prompt Tokens: 9259; Accumulate Completion Tokens: 154
+INFO - API call complete...
+INFO - Num of interactive elements: 16
+INFO - Iter: 3
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Calling gpt4v API...
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Prompt Tokens: 4436; Completion Tokens: 48
+INFO - Accumulate Prompt Tokens: 13695; Accumulate Completion Tokens: 202
+INFO - API call complete...
+INFO - Num of interactive elements: 8
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Iter: 4
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Calling gpt4v API...
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Prompt Tokens: 4412; Completion Tokens: 57
+INFO - Accumulate Prompt Tokens: 18107; Accumulate Completion Tokens: 259
+INFO - API call complete...
+INFO - Iter: 5
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Calling gpt4v API...
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Prompt Tokens: 4461; Completion Tokens: 59
+INFO - Accumulate Prompt Tokens: 22568; Accumulate Completion Tokens: 318
+INFO - API call complete...
+INFO - Num of interactive elements: 16
+INFO - Iter: 6
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Calling gpt4v API...
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Prompt Tokens: 4776; Completion Tokens: 53
+INFO - Accumulate Prompt Tokens: 27344; Accumulate Completion Tokens: 371
+INFO - API call complete...
+INFO - Num of interactive elements: 37
+INFO - Iter: 7
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Calling gpt4v API...
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Prompt Tokens: 5117; Completion Tokens: 43
+INFO - Accumulate Prompt Tokens: 32461; Accumulate Completion Tokens: 414
+INFO - API call complete...
+INFO - Num of interactive elements: 24
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Iter: 8
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Calling gpt4v API...
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Prompt Tokens: 5129; Completion Tokens: 47
+INFO - Accumulate Prompt Tokens: 37590; Accumulate Completion Tokens: 461
+INFO - API call complete...
+INFO - Num of interactive elements: 4
+INFO - Iter: 9
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Calling gpt4v API...
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Prompt Tokens: 5145; Completion Tokens: 56
+INFO - Accumulate Prompt Tokens: 42735; Accumulate Completion Tokens: 517
+INFO - API call complete...
+INFO - Num of interactive elements: 5
+INFO - Iter: 10
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Calling gpt4v API...
+INFO - HTTP Request: POST https://openai-factcheck-us.openai.azure.com/openai/deployments/gpt-4o-2/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+INFO - Prompt Tokens: 5189; Completion Tokens: 79
+INFO - Accumulate Prompt Tokens: 47924; Accumulate Completion Tokens: 596
+INFO - API call complete...
+INFO - Num of interactive elements: 14
+INFO - The webpage of "前瞻科技研究中心" (Research Center for Advanced Science and Technology) is successfully located at the visible address with title confirming its identity.
+INFO - finish!!
+INFO - {'role': 'system', 'content': 'Imagine you are a robot browsing the web, just like humans. Now you need to complete a task. In each iteration, you will receive an Observation that includes a screenshot of a webpage and some texts. This screenshot will feature Numerical Labels placed in the TOP LEFT corner of each Web Element.\nCarefully analyze the visual information to identify the Numerical Label corresponding to the Web Element that requires interaction, then follow the guidelines and choose one of the following actions:\n1. Click a Web Element.\n2. Delete existing content in a textbox and then type content. \n3. Scroll up or down. Multiple scrolls are allowed to browse the webpage. Pay attention!! The default scroll is the whole window. If the scroll widget is located in a certain area of the webpage, then you have to specify a Web Element in that area. I would hover the mouse there and then scroll.\n4. Wait. Typically used to wait for unfinished webpage processes, with a duration of 5 seconds.\n5. Go back, returning to the previous webpage.\n6. Google, directly jump to the Google search page. When you can\'t find information in some websites, try starting over with Google.\n7. Answer. This action should only be chosen when all questions in the task have been solved.\n\nCorrespondingly, Action should STRICTLY follow the format:\n- Click [Numerical_Label]\n- Type [Numerical_Label]; [Content]\n- Scroll [Numerical_Label or WINDOW]; [up or down]\n- Wait\n- GoBack\n- Google\n- ANSWER; [content]\n\nKey Guidelines You MUST follow:\n* Action guidelines *\n1) To input text, NO need to click textbox first, directly type content. After typing, the system automatically hits `ENTER` key. Sometimes you should click the search button to apply search filters. Try to use simple language when searching.  \n2) You must Distinguish between textbox and search button, don\'t type content into the button! If no textbox is found, you may need to click the search button first before the textbox is displayed. \n3) Execute only one action per iteration. \n4) STRICTLY Avoid repeating the same action if the webpage remains unchanged. You may have selected the wrong web element or numerical label. Continuous use of the Wait is also NOT allowed.\n5) When a complex Task involves multiple questions or steps, select "ANSWER" only at the very end, after addressing all of these questions (steps). Flexibly combine your own abilities with the information in the web page. Double check the formatting requirements in the task when ANSWER. \n* Web Browsing Guidelines *\n1) Don\'t interact with useless web elements like Login, Sign-in, donation that appear in Webpages. Pay attention to Key Web Elements like search textbox and menu.\n2) If there are forced logins or ads, you can click to close them.\n3) Vsit video websites like YouTube is allowed BUT you can\'t play videos. Clicking to download PDF is allowed and will be analyzed by the Assistant API.\n4) Focus on the numerical labels in the TOP LEFT corner of each rectangle (element). Ensure you don\'t mix them up with other numbers (e.g. Calendar) on the page.\n5) Focus on the date in task, you must look for results that match the date. It may be necessary to find the correct year, month and day at calendar.\n6) Pay attention to the filter and sort functions on the page, which, combined with scroll, can help you solve conditions like \'highest\', \'cheapest\', \'lowest\', \'earliest\', etc. Try your best to find the answer that best fits the task.\n\nYour reply should strictly follow the format:\nThought: {Your brief thoughts (briefly summarize the info that will help ANSWER)}\nAction: {One Action format you choose}\n\nThen the User will provide:\nObservation: {A labeled screenshot Given by User}'}
+INFO - {'role': 'user', 'content': "Now given a task: Help me find the webpage of '前瞻科技研究中心'  Please interact with https://www.ncu.edu.tw/tw/ and get the answer.Observation: A screenshot and some texts. (Omitted in context.)"}
+INFO - {'role': 'assistant', 'content': 'Thought: The cookie consent pop-up (label 4) is likely interfering with interactions on the webpage. Accepting it would allow further exploration of the site.\n\nAction: Click [4]'}
+INFO - {'role': 'user', 'content': 'Observation: A screenshot and some texts. (Omitted in context.)'}
+INFO - {'role': 'assistant', 'content': 'Thought: The visible section of the webpage does not display a search bar or direct link to "前瞻科技研究中心". Using the search function is suggested, but it is not yet visible. The webpage may need to be scrolled further to find relevant navigation or search options.\n\nAction: Scroll [WINDOW]; down'}
+INFO - {'role': 'user', 'content': 'Observation: A screenshot and some texts. (Omitted in context.)'}
+INFO - {'role': 'assistant', 'content': 'Thought: The search functionality or a direct reference to "前瞻科技研究中心" is still not visible within the current portion of the webpage. Scrolling further may reveal the search bar or a relevant section for exploration.\n\nAction: Scroll [WINDOW]; down'}
+INFO - {'role': 'user', 'content': 'Observation: A screenshot and some texts. (Omitted in context.)'}
+INFO - {'role': 'assistant', 'content': 'Thought: The search function or a link to "前瞻科技研究中心" has not been located in the visible sections so far. Scrolling further may still help uncover navigation tools or relevant content.\n\nAction: Scroll [WINDOW]; down'}
+INFO - {'role': 'user', 'content': 'Observation: A screenshot and some texts. (Omitted in context.)'}
+INFO - {'role': 'assistant', 'content': 'Thought: The current view is entirely blank, suggesting that the necessary elements or references to "前瞻科技研究中心" have not been found on this webpage. As suggested, switching to a search engine to locate the required official webpage might be the most efficient approach.\n\nAction: Google'}
+INFO - {'role': 'user', 'content': 'Observation: A screenshot and some texts. (Omitted in context.)'}
+INFO - {'role': 'assistant', 'content': 'Thought: The Google search bar (label 7) is available and ready to use to search for "前瞻科技研究中心" as suggested earlier. This is the most direct approach to locate the desired webpage or related information.\n\nAction: Type [7]; 前瞻科技研究中心'}
+INFO - {'role': 'user', 'content': 'Observation: A screenshot and some texts. (Omitted in context.)'}
+INFO - {'role': 'assistant', 'content': 'Thought: The first link (label 19) is a direct result leading to "前瞻科技研究中心" on the National Central University website. This link is most relevant for the task and should be clicked to proceed.\n\nAction: Click [19]  '}
+INFO - {'role': 'user', 'content': 'Observation: A screenshot and some texts. (Omitted in context.)'}
+INFO - {'role': 'assistant', 'content': 'Thought: The URL (label 16) is clearly displayed and provides direct access to the "前瞻科技研究中心" website. Clicking it will lead to the relevant webpage.\n\nAction: Click [16]'}
+INFO - {'role': 'user', 'content': [{'type': 'text', 'text': 'Observation: web assistant:資訊不足。建議您訪問中央大學的網站首頁或使用搜尋引擎搜尋「前瞻科技研究中心」，以找到相關的網頁資訊。 please analyze the attached screenshot (Currently visible range：NaN% - Infinity%) and give the Thought and Action. I\'ve provided the tag name of each element and the text it contains (if text exists). Note that <textarea> or <input> may be textbox, but not exactly. Please focus more on the screenshot and then refer to the textual information.\n[0]: "進一步瞭解這項警告";\t[1]: "開啟強化防護";\t[2]: <button> "返回安全網頁";\t[3]: <button> "進階";'}, {'type': 'image_url', 'image_url': {'url': 'data:image/png;base64,{b64_img}'}}]}
+INFO - {'role': 'assistant', 'content': 'Thought: The warning indicates a certificate authority issue with the website. To proceed to the requested webpage despite the warning, the "進階" (Advanced) button (label 3) can be clicked.\n\nAction: Click [3]'}
+INFO - {'role': 'user', 'content': [{'type': 'text', 'text': 'Observation: web assistant:根據提供的內容，網站 **www.recast.ncu.edu.tw** 顯示了安全性警告，表示它的連線不是私人連線，且可能存在安全風險。這表明該網站的安全憑證存在問題，因此無法信任。\n\n若要找到「前瞻科技研究中心」的網頁，建議您使用以下方法：\n\n1. 嘗試搜索「前瞻科技研究中心」的相關關鍵字，結合「國立中央大學」或「前瞻科技研究」等詞彙，通過搜尋引擎尋找官方網站。\n2. 直接訪問國立中央大學的官方網站，尋找可能的連結或者部門頁面。\n3. 若有其他可靠來源或文件提到該中心，也可以參考那些資訊。\n\n如果仍然無法找到所需的網頁，建議在安全的環境下（如使用 VPN 或其他安全連線方式）嘗試訪問該網站，或耐心等待該網站解決其安全性問題。 please analyze the attached screenshot (Currently visible range：0.00% - 1074.14%) and give the Thought and Action. I\'ve provided the tag name of each element and the text it contains (if text exists). Note that <textarea> or <input> may be textbox, but not exactly. Please focus more on the screenshot and then refer to the textual information.\n[0]: "進一步瞭解這項警告";\t[1]: "開啟強化防護";\t[2]: <button> "返回安全網頁";\t[3]: <button> "隱藏詳細資料";\t[4]: "繼續前往 www.recast.ncu.edu.tw 網站 (不安全)";'}, {'type': 'image_url', 'image_url': {'url': 'data:image/png;base64,{b64_img}'}}]}
+INFO - {'role': 'assistant', 'content': 'Thought: The option to "繼續前往 www.recast.ncu.edu.tw 網站 (不安全)" (label 4) is present. Proceeding with this action would allow access to the webpage, albeit with potential security risks.\n\nAction: Click [4]'}
+INFO - {'role': 'user', 'content': [{'type': 'text', 'text': 'Observation: web assistant:根據您提供的內容，您可以透過以下的聯絡資訊來尋找「前瞻科技研究中心」的網頁：\n\n- 電子郵件：ncu57971@ncu.edu.tw\n- 電話：03-4227151\n- 地址：桃園市中壢區中大路300號(工程五館C棟)\n\n如果需要進一步的信息，建議您直接聯絡該中心或搜尋網路上的相關信息。 please analyze the attached screenshot (Currently visible range：0.00% - 12.92%) and give the Thought and Action. I\'ve provided the tag name of each element and the text it contains (if text exists). Note that <textarea> or <input> may be textbox, but not exactly. Please focus more on the screenshot and then refer to the textual information.\n[0]: ":::";\t[1]: "網站導覽";\t[2]: "ncu57971@ncu.edu.tw", "Send email to ncu57971@ncu.edu.tw";\t[3]: "03-4227151", "Call 03-4227151";\t[4]: "前瞻科技中心";\t[5]: "首頁";\t[6]: "關於";\t[7]: "中心法規";\t[8]: "中心組織";\t[9]: "中心主任";\t[10]: "出版刊物";\t[11]: "聯絡我們";\t[12]: "English";\t[13]: "101年2月1日正式成立「前瞻科技研究中心」Research Center for Advanced Science and Technology（RECAST)";'}, {'type': 'image_url', 'image_url': {'url': 'data:image/png;base64,{b64_img}'}}]}
+INFO - {'role': 'assistant', 'content': 'Thought: The webpage for "前瞻科技研究中心" (Research Center for Advanced Science and Technology, RECAST) is visible. Its title and content confirm that this is the required webpage. \n\nAction: ANSWER; The webpage of "前瞻科技研究中心" (Research Center for Advanced Science and Technology) is successfully located at the visible address with title confirming its identity.'}
+INFO - Total cost: 0.49712

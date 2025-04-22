@@ -1,0 +1,13 @@
+*.log
+downloads/*.pdf
+test_code.py
+__pycache__
+.venv
+.vscode
+selenium
+downloads/*
+results/*
+data/multimodal_mind2web/data
+
+!results/demo/
+!results/demo/**
