@@ -3,6 +3,7 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import MaxNLocator 
+from collections import Counter
 
 def evaluate_success_rate(eval_file='evaluation/auto_eval_result.json'):
     with open(eval_file) as f:
@@ -236,15 +237,75 @@ def evaluate_steps_two_method(name1, base_dir1, eval_file1, name2, base_dir2, ev
 
     plt.show()
 
-if __name__ == '__main__':
-    eval_file = r'evaluation\auto_eval_result_mind2web_observer.json'
-    base_dir = r'results\20250225_17_02_28_mind2web_observer'
+def evaluate_action_category(eval_file1, eval_file2, dataset1_name, base_dir1, base_dir2, dataset2_name):
+    def parse_action_data(base_dir, eval_file):
+        action_distribution = Counter()
+        with open(eval_file, encoding='utf-8') as f:
+            data = json.load(f)
 
-    evaluate_success_rate(eval_file)
+        for row in data:
+            if row[1] == 1:  # Only consider successful cases
+                task_name = row[0].split('\\')[-1]
+                action_file = os.path.join(base_dir, task_name, 'action_trajectory.json')
+                try:
+                    with open(action_file, encoding='utf-8') as af:
+                        print(action_file)
+                        actions = json.load(af)
+                        for action in actions:
+                            action_key = action.get("action_key", "Unknown")
+                            if action_key:  # Ensure action_key is not None
+                                action_distribution[action_key] += 1
+                except FileNotFoundError:
+                    print(f"Action file not found: {action_file}")
+        return action_distribution
+
+    # Parse action data for both files
+    action_dist1 = parse_action_data(base_dir1, eval_file1)
+    action_dist2 = parse_action_data(base_dir2, eval_file2)
+
+    # Combine keys for consistent plotting
+    all_keys = set(action_dist1.keys()).union(set(action_dist2.keys()))
+    all_keys = sorted(all_keys)
+
+    # Prepare data for plotting
+    counts1 = [action_dist1.get(key, 0) for key in all_keys]
+    counts2 = [action_dist2.get(key, 0) for key in all_keys]
+
+    # Plotting
+    x = np.arange(len(all_keys))
+    width = 0.35
+
+    plt.bar(x - width/2, counts1, width, label= dataset1_name, color='#4F81BD')
+    plt.bar(x + width/2, counts2, width, label= dataset2_name, color='#9BBB59')
+
+    plt.xticks(x, all_keys, rotation=45, ha='right')
+    plt.ylabel('Action Count')
+    plt.xlabel('Action Category')
+    plt.title('Action Distribution Comparison')
+    plt.legend()
+    plt.tight_layout()
+
+    # plt.show()
+    plt.savefig('evaluation/action_distribution_comparison.png', dpi=300, bbox_inches='tight')
+
+
+if __name__ == '__main__':
+    # eval_file = r'evaluation\results\auto_eval_result_GAIA2_gpt_4o.json'
+    # base_dir = r'results\dataset\GAIA_gpt_4o\level2'
+
+    # evaluate_success_rate(eval_file)
+    # evaluate_avg_step_success_case(eval_file, base_dir)
+
     # evaluate_success_rate_GAIA(eval_file, level=2)
-    evaluate_avg_step_success_case(eval_file, base_dir)
     # evaluate_steps_success_rate(base_dir,eval_file)
     # evaluate_success_rate_human(eval_file)
 
     # evaluate_steps_success_rate_two_method('PagePilot','results/dataset/arxiv','evaluation/auto_eval_result_arxiv.json','WebVoyager','results/dataset/arxiv_origin','evaluation/auto_eval_result_arxiv_origin.json')
     # evaluate_steps_two_method('PagePilot','results/dataset/arxiv','evaluation/auto_eval_result_arxiv.json','WebVoyager','results/dataset/arxiv_origin','evaluation/auto_eval_result_arxiv_origin.json')
+
+    eval_file1 = r'evaluation\results\mind2web\auto_eval_result_mind2web_nodynamic_noassistant_nomarkdown.json'
+    eval_file2 = r'evaluation\results\mind2web\auto_eval_result_mind2web.json'
+    base_dir1 = r'results\dataset\mind2web_nodynamic_noassistant_nomarkdown'
+    base_dir2 = r'results\dataset\mind2web'
+
+    evaluate_action_category(eval_file1, eval_file2, 'WebVoyager', base_dir1, base_dir2, 'PagePilot')

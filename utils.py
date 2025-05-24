@@ -437,6 +437,7 @@ def get_webtext_help_from_assistant(client, webtext_md, task, model='gpt-4o-mini
     # webtext_md = truncate_input(webtext_md, max_tokens=126000)
 
    # call gpt4o mini api for chat completion
+    # model='meta-llama/llama-4-maverick:free'
     response = client.chat.completions.create(
         model=model,
         messages=[
@@ -447,6 +448,7 @@ def get_webtext_help_from_assistant(client, webtext_md, task, model='gpt-4o-mini
     return response.choices[0].message.content
 
 def get_observer_help_from_assistant(client, action_messages, task, model='gpt-4o') -> str:
+    # model='meta-llama/llama-4-maverick:free'
     messages=[
         {"role": "system", "content": SYSTEM_PROMPT_OBSERVER}        
     ]
