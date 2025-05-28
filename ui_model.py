@@ -6,6 +6,9 @@ import os
 import shutil
 import logging
 
+import sounddevice as sd
+import soundfile as sf
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -624,3 +627,32 @@ class TaskModel(Observable):
         self.notify_observers(f"Task {self.task_counter} finished.")
         self.task_counter += 1
         self.executing = False
+
+    def record_audio(self, audio_file, recording_flag):
+        fs = 16000
+        duration = 60
+        myrecording = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype='int16')
+        frames = 0
+        while recording_flag() and frames < duration * fs:
+            sd.sleep(100)
+            frames += int(fs * 0.1)
+        sd.stop()
+        # 裁切到實際錄音長度
+        actual_frames = int(frames)
+        sf.write(audio_file, myrecording[:actual_frames], fs)
+
+    def transcribe_audio(self, audio_file):
+        try:
+            client = OpenAI(api_key=self.args.api_key)
+            with open(audio_file, "rb") as audio:
+                transcript = client.audio.transcriptions.create(
+                    model="gpt-4o-mini-transcribe",
+                    file=audio
+                )
+            text = transcript.text if hasattr(transcript, "text") else str(transcript)
+            self.notify_observers(f"語音辨識結果：{text}")
+            self.notify_observers(text, update_type='voice')
+            return text
+        except Exception as e:
+            self.notify_observers(f"語音辨識失敗: {e}")
+            return ""

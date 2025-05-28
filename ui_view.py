@@ -50,3 +50,11 @@ class TaskView(QtWidgets.QDialog):
     
     def add_status_text(self, text):
         self.ui.textBrowser.append(text)
+
+    def set_voice_button_state(self, recording):
+        if recording:
+            self.ui.pushButton_2.setText("Stop")
+            self.ui.pushButton_2.setStyleSheet("background-color: red; color: white; font-weight: bold;")
+        else:
+            self.ui.pushButton_2.setText("Voice")
+            self.ui.pushButton_2.setStyleSheet("")

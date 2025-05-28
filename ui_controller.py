@@ -2,17 +2,22 @@ import argparse
 from PyQt6 import QtCore, QtGui, QtWidgets
 import sys
 import threading
+import tempfile
 
 from ui_model import TaskModel
 from ui_view import TaskView
 
 class TaskController:
-    def __init__(self, view, model):
+    def __init__(self, view:TaskView, model:TaskModel):
         self.view = view
         self.model = model
         self.model.add_observer(self)
+        self.recording = False
+        self.audio_file = None
+        self.audio_thread = None
 
         self.view.ui.pushButton.clicked.connect(self.on_command_send)
+        self.view.ui.pushButton_2.clicked.connect(self.on_voice_button)
 
 
     def on_command_send(self):
@@ -30,8 +35,49 @@ class TaskController:
     #     # 啟動多工處理
     #     threading.Thread(target=self.model.process_data, args=(input_data,), daemon=True).start()
 
-    def update(self, data):
-        self.view.add_status_text(data)
+    def on_voice_button(self):
+        if not self.recording:
+            self.start_recording()
+        else:
+            self.stop_recording_and_transcribe()
+
+    def start_recording(self):
+        self.recording = True
+        self.view.set_voice_button_state(True)
+        self.audio_file = tempfile.NamedTemporaryFile(delete=False, suffix=".wav").name
+        self.audio_thread = threading.Thread(
+            target=self.model.record_audio,
+            args=(self.audio_file, lambda: self.recording),
+            daemon=True
+        )
+        self.audio_thread.start()
+        self.view.add_status_text("錄音中...")
+
+    def stop_recording_and_transcribe(self):
+        self.recording = False
+        self.view.set_voice_button_state(False)
+        self.view.add_status_text("錄音結束，正在辨識...")
+        if self.audio_thread:
+            self.audio_thread.join()
+        # def transcribe_and_set():
+        #     text = self.model.transcribe_audio(self.audio_file)
+        #     if text:
+        #         pass # do task
+        threading.Thread(target=self.model.transcribe_audio, args=(self.audio_file,), daemon=True).start()
+        
+        # save the audio file
+        # import shutil
+        # import os
+        # target_path = os.path.join(".", os.path.basename(self.audio_file))
+        # shutil.copy(self.audio_file, target_path)
+
+
+
+    def update(self, data, update_type='status'):
+        if update_type == 'status':
+            self.view.add_status_text(data)
+        elif update_type == 'voice':
+            self.view.ui.lineEdit_2.setText(data)
 
 
 # Main Application
