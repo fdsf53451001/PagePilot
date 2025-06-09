@@ -5,6 +5,7 @@ import re
 import os
 import shutil
 import logging
+import requests
 
 import sounddevice as sd
 import soundfile as sf
@@ -650,10 +651,77 @@ class TaskModel(Observable):
                     language="zh-tw",
                     file=audio
                 )
-            text = transcript.text if hasattr(transcript, "text") else str(transcript)
+            if hasattr(transcript, "text"):
+                text = transcript.text
+                sentence_list = self.cut_sent(text)
+                text = self.audio_correction(sentence_list)
+            else:
+                text = str(transcript)
             self.notify_observers(f"語音辨識結果：{text}")
             self.notify_observers(text, update_type='voice')
             return text
         except Exception as e:
             self.notify_observers(f"語音辨識失敗: {e}")
             return ""
+        
+    def cut_sent(self, para):
+        para = re.sub('([。！？\?])([^”’])', r"\1\n\2", para)  # 单字符断句符
+        para = re.sub('(\.{6})([^”’])', r"\1\n\2", para)  # 英文省略号
+        para = re.sub('(\…{2})([^”’])', r"\1\n\2", para)  # 中文省略号
+        para = re.sub('([。！？\?][”’])([^，。！？\?])', r'\1\n\2', para)
+        # 如果双引号前有终止符，那么双引号才是句子的终点，把分句符\n放到双引号后，注意前面的几句都小心保留了双引号
+        para = para.rstrip()  # 段尾如果有多余的\n就去掉它
+        # 很多规则中会考虑分号;，但是这里我把它忽略不计，破折号、英文双引号等同样忽略，需要的再做些简单调整即可。
+        return para.split("\n")
+    
+    def audio_correction(self, sentences:list) -> str:
+
+        def call_input_clasifier(text:str):
+            url = "http://140.115.54.55:1228/input_classifier/"
+
+            payload = json.dumps({
+            "content": text
+            })
+            headers = {
+            'Content-Type': 'application/json'
+            }
+
+            response = requests.request("POST", url, headers=headers, data=payload)
+            return json.loads(response.text)['result']
+        
+        def call_error_correction(text:str, command:str):
+            url = "http://140.115.54.55:1228/error_correction/"
+
+            payload = json.dumps({
+            "text": text,
+            "command": command
+            })
+            headers = {
+            'Content-Type': 'application/json'
+            }
+
+            response = requests.request("POST", url, headers=headers, data=payload)
+            response_json = json.loads(response.text)
+            if response_json['status'] == 'success':
+                return response_json['corrected_text']
+            else:
+                return text
+
+        corrected_sentences = [sentences[0]]  # Start with the first sentence
+        for i in range(1, len(sentences)):
+            sentence = sentences[i]
+            if not sentence.strip():
+                continue
+            
+            # Call input classifier
+            command = call_input_clasifier(sentence)
+            if command == 0:
+                corrected_sentences.append(sentence)
+                continue
+            
+            # Call error correction
+            corrected_sentence = call_error_correction(sentences[i-1], sentence)
+            corrected_sentences[-1] = corrected_sentence
+            # discard current sentence
+
+        return ''.join(corrected_sentences)
