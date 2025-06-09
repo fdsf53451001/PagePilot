@@ -647,6 +647,7 @@ class TaskModel(Observable):
             with open(audio_file, "rb") as audio:
                 transcript = client.audio.transcriptions.create(
                     model="gpt-4o-mini-transcribe",
+                    language="zh-tw",
                     file=audio
                 )
             text = transcript.text if hasattr(transcript, "text") else str(transcript)

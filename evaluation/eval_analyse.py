@@ -51,7 +51,25 @@ def evaluate_avg_step_success_case(eval_file, base_dir):
             except:
                 success_step += 15
           
+    print(f"Average step in success case: {success_step/success_case}")
 
+def evaluate_avg_step_success_case_browser_use(eval_file, base_dir):
+    with open(eval_file, encoding='utf-8') as f:
+        data = json.load(f)
+
+    success_case = 0
+    success_step = 0
+    for row in data:
+        if row[1] == 1:
+            success_case += 1
+            task_name = row[0].split('\\')[-1]
+            try:
+                with open(f'{base_dir}/{task_name}/task_info.json', encoding='utf-8') as f:
+                    action_data = json.load(f)
+                    success_step += len(action_data['history']['history'])
+            except:
+                success_step += 15
+          
     print(f"Average step in success case: {success_step/success_case}")
 
 def evaluate_success_rate_human(eval_file):
@@ -290,11 +308,12 @@ def evaluate_action_category(eval_file1, eval_file2, dataset1_name, base_dir1, b
 
 
 if __name__ == '__main__':
-    # eval_file = r'evaluation\results\auto_eval_result_GAIA2_gpt_4o.json'
-    # base_dir = r'results\dataset\GAIA_gpt_4o\level2'
+    eval_file = r'evaluation\results\auto_eval_result_GAIA2_gpt_4o.json'
+    base_dir = r'results\dataset\GAIA_gpt_4o\level2'
 
-    # evaluate_success_rate(eval_file)
-    # evaluate_avg_step_success_case(eval_file, base_dir)
+    evaluate_success_rate(eval_file)
+    evaluate_avg_step_success_case(eval_file, base_dir)
+    # evaluate_avg_step_success_case_browser_use(eval_file, base_dir)
 
     # evaluate_success_rate_GAIA(eval_file, level=2)
     # evaluate_steps_success_rate(base_dir,eval_file)
@@ -303,9 +322,8 @@ if __name__ == '__main__':
     # evaluate_steps_success_rate_two_method('PagePilot','results/dataset/arxiv','evaluation/auto_eval_result_arxiv.json','WebVoyager','results/dataset/arxiv_origin','evaluation/auto_eval_result_arxiv_origin.json')
     # evaluate_steps_two_method('PagePilot','results/dataset/arxiv','evaluation/auto_eval_result_arxiv.json','WebVoyager','results/dataset/arxiv_origin','evaluation/auto_eval_result_arxiv_origin.json')
 
-    eval_file1 = r'evaluation\results\mind2web\auto_eval_result_mind2web_nodynamic_noassistant_nomarkdown.json'
-    eval_file2 = r'evaluation\results\mind2web\auto_eval_result_mind2web.json'
-    base_dir1 = r'results\dataset\mind2web_nodynamic_noassistant_nomarkdown'
-    base_dir2 = r'results\dataset\mind2web'
-
-    evaluate_action_category(eval_file1, eval_file2, 'WebVoyager', base_dir1, base_dir2, 'PagePilot')
+    # eval_file1 = r'evaluation\results\mind2web\auto_eval_result_mind2web_nodynamic_noassistant_nomarkdown.json'
+    # eval_file2 = r'evaluation\results\mind2web\auto_eval_result_mind2web.json'
+    # base_dir1 = r'results\dataset\mind2web_nodynamic_noassistant_nomarkdown'
+    # base_dir2 = r'results\dataset\mind2web'
+    # evaluate_action_category(eval_file1, eval_file2, 'WebVoyager', base_dir1, base_dir2, 'PagePilot')
