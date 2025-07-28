@@ -62,6 +62,8 @@ def driver_config(args):
     )
     
     options.add_argument("disable-blink-features=AutomationControlled")
+    options.add_experimental_option('excludeSwitches',['enable-logging'])
+    options.add_experimental_option('excludeSwitches',['enable-automation'])
     return options
 
 
@@ -182,6 +184,9 @@ def call_gpt4v_api(args, openai_client, messages):
                 time.sleep(10)
 
             elif type(e).__name__ == 'APIError':
+                time.sleep(15)
+                
+            elif type(e).__name__ == 'APIStatusError':
                 time.sleep(15)
 
             elif type(e).__name__ == 'InvalidRequestError':
@@ -564,6 +569,7 @@ def execute_task(args, client, options, result_dir, task):
             f.write(action_trajectory_json+'\n')
 
         if it%4==0 and args.web_observer:
+            time.sleep(1)
             observer_help = get_observer_help_from_assistant(client, messages, task['ques'], args.api_model)
             isgoback=False
             if 'NO' in observer_help:

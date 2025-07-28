@@ -430,33 +430,56 @@ def truncate_input(prompt, max_tokens=128000):
         return encoding.decode(truncated_tokens)
     return prompt
 
-def get_webtext_help_from_assistant(client, webtext_md, task, model='gpt-4o-mini') -> str:
+def call_openai_api(client, messages, model='gpt-4o-mini'):
+    # call api with retry function
+    it = 0
+    while it < 10:
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                messages=messages
+            )
+            return response.choices[0].message.content
+        except Exception as e:
+            logging.error(f"Error occurred while calling OpenAI API: {e}")
+            it += 1
+            time.sleep(5)
+    raise Exception(f"Failed to call OpenAI API after 10 attempts: {e}")
+    
+
+def get_webtext_help_from_assistant(client, webtext_md, task, model='google/gemma-3-27b-it:free') -> str:
     # the webtext_md is the markdown format of the web text, and the task is the task description
     # return answer if enough information, else return any help information to web agent
 
     # webtext_md = truncate_input(webtext_md, max_tokens=126000)
 
-   # call gpt4o mini api for chat completion
-    # model='meta-llama/llama-4-maverick:free'
-    response = client.chat.completions.create(
-        model=model,
-        messages=[
+    # response = client.chat.completions.create(
+    #     model=model,
+    #     messages=[
+    #         {"role": "system", "content": "You are a helpful assistant who analyzes web content and gives answers appropriate to a given task. Please strictly check whether you meet the task requirements before answering. If there is not enough information, answer \"Insufficient information\" and provide suggestions, such as clicking on the link at the bottom of the page, etc. 使用繁體中文回答。"},
+    #         {"role": "user", "content": f"web content:{webtext_md}\n task:{task}"}
+    #     ]
+    # )
+    # return response.choices[0].message.content
+
+    messages=[
             {"role": "system", "content": "You are a helpful assistant who analyzes web content and gives answers appropriate to a given task. Please strictly check whether you meet the task requirements before answering. If there is not enough information, answer \"Insufficient information\" and provide suggestions, such as clicking on the link at the bottom of the page, etc. 使用繁體中文回答。"},
             {"role": "user", "content": f"web content:{webtext_md}\n task:{task}"}
         ]
-    )
-    return response.choices[0].message.content
+    return call_openai_api(client, messages, model=model)
 
-def get_observer_help_from_assistant(client, action_messages, task, model='gpt-4o') -> str:
-    # model='meta-llama/llama-4-maverick:free'
+def get_observer_help_from_assistant(client, action_messages, task, model='google/gemma-3-27b-it:free') -> str:
+
     messages=[
         {"role": "system", "content": SYSTEM_PROMPT_OBSERVER}        
     ]
     messages.extend(action_messages[-8:])
     messages.append({"role": "user", "content": f"task is {task}, Please say YES or NO first, and then say your suggestion."})
     
-    response = client.chat.completions.create(
-        model=model,
-        messages=messages
-    )
-    return response.choices[0].message.content
+    # response = client.chat.completions.create(
+    #     model=model,
+    #     messages=messages
+    # )
+    # return response.choices[0].message.content
+    
+    return call_openai_api(client, messages, model=model)

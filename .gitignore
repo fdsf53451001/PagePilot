@@ -6,11 +6,13 @@ __pycache__
 .vscode
 selenium
 downloads/*
+graph/*
 
 results/*
 data/multimodal_mind2web/data
 evaluation/results
 train/data
+train/val
 
 !results/demo/
 !results/demo/**

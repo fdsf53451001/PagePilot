@@ -50,8 +50,36 @@ def evaluate_avg_step_success_case(eval_file, base_dir):
                             success_step += 1
             except:
                 success_step += 15
-          
+    if success_case == 0:
+        print("No successful cases found.")
+        return
     print(f"Average step in success case: {success_step/success_case}")
+
+def error_analyze(eval_file, base_dir):
+    with open(eval_file, encoding='utf-8') as f:
+        data = json.load(f)
+
+    format_error_pattern = "Format ERROR: Both 'Thought' and 'Action' should be included in your reply."
+    action_error_pattern = "The action you have chosen cannot be exected. Please double-check if you have selected the wrong Numerical Label or Action or Action format. Then provide the revised Thought and Action."
+    format_error = 0
+    action_error = 0
+    for row in data:
+        task_name = row[0].split('\\')[-1]
+        try:
+            with open(f'{base_dir}/{task_name}/interact_messages.json', encoding='utf-8') as f:
+                lines = f.readlines()
+                for line in lines:
+                    if format_error_pattern in line:
+                        format_error += 1
+                    if action_error_pattern in line:
+                        action_error += 1
+        except FileNotFoundError:
+            print(f"File not found: {base_dir}/{task_name}/interact_messages.json")
+            continue
+          
+    print(f"Format error: {format_error}")
+    print(f"Action error: {action_error}")
+
 
 def evaluate_avg_step_success_case_browser_use(eval_file, base_dir):
     with open(eval_file, encoding='utf-8') as f:
@@ -308,11 +336,12 @@ def evaluate_action_category(eval_file1, eval_file2, dataset1_name, base_dir1, b
 
 
 if __name__ == '__main__':
-    eval_file = r'evaluation\results\auto_eval_result_GAIA2_gpt_4o.json'
-    base_dir = r'results\dataset\GAIA_gpt_4o\level2'
+    eval_file = r'evaluation\results\mind2web\auto_eval_result_mind2web_webvoyager.json'
+    base_dir = r'results\dataset\mind2web_webvoyager'
 
     evaluate_success_rate(eval_file)
     evaluate_avg_step_success_case(eval_file, base_dir)
+    # error_analyze(eval_file, base_dir)
     # evaluate_avg_step_success_case_browser_use(eval_file, base_dir)
 
     # evaluate_success_rate_GAIA(eval_file, level=2)

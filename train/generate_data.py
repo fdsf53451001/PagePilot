@@ -27,6 +27,6 @@ def process_results(input_file, output_file):
 
 # Example usage
 if __name__ == "__main__":
-    input_file = r"evaluation\results\auto_eval_result_GAIA2_gemini_25_pro.json"
-    output_file = r"train\train_GAIA2_gemini_25_pro.jsonl"
+    input_file = r"evaluation\results\GAIA\auto_eval_result_GAIA2_gpt_4o.json"
+    output_file = r"train\data\v4\train_GAIA2_gpt_4o.jsonl"
     process_results(input_file, output_file)

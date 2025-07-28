@@ -48,8 +48,13 @@ def load_web_dump(process_dir):
 def auto_eval_by_gpt4v(process_dir, openai_client, api_model, img_num):
     print(f'--------------------- {process_dir} ---------------------')
     res_files = sorted(os.listdir(process_dir))
-    with open(os.path.join(process_dir, 'interact_messages.json')) as fr:
-        it_messages = json.load(fr)
+    try:
+        with open(os.path.join(process_dir, 'interact_messages.json')) as fr:
+            it_messages = json.load(fr)
+    except FileNotFoundError:
+        print('No interact_messages.json found in ' + process_dir)
+        print()
+        return 0
 
     if len(it_messages) == 1:
         print('Not find answer for ' + process_dir + ' only system messages')
@@ -73,6 +78,10 @@ def auto_eval_by_gpt4v(process_dir, openai_client, api_model, img_num):
         return 0
     pattern_ans = r"ANSWER[; ]+\[?(.[^\]]*)\]?"
     matches_ans = re.search(pattern_ans, ans_info)
+    if not matches_ans:
+        print('Answer format error for ' + process_dir)
+        print()
+        return 0
     answer_content = matches_ans.group(1).strip()
 
     # max_screenshot_id = max([int(f[10:].split('.png')[0]) for f in os.listdir(process_dir) if '.png' in f])
